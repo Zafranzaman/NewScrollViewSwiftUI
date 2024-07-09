@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "main-qimg-f048f9eb4e35c75fb611d843cd2538d1.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "original"
+  }
+}
