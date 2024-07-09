@@ -25,7 +25,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(place?.name ?? "")
-                .font(.headline)
+                .font(.title)
                 .padding(.horizontal, 32)
             
             ScrollView(.horizontal, showsIndicators: false) {
@@ -54,7 +54,7 @@ struct ContentView: View {
                 }
                 .scrollTargetLayout()
             }
-            .frame(height: 400)
+            .frame(height: 250)
             .safeAreaPadding(.horizontal, 32)
             .scrollClipDisabled()
             .scrollTargetBehavior(.viewAligned)
@@ -73,9 +73,14 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.left.square.fill")
                         .font(.system(size: 50))
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .foregroundColor(.accentColor)
+                        .clipShape(Capsule())
                 }
                 .disabled(place == places.first)
                 
+                Spacer()
                 Button {
                     withAnimation {
                         guard let place, let index = places.firstIndex(of: place),
@@ -85,11 +90,14 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.right.square.fill")
                         .font(.system(size: 50))
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .foregroundColor(.accentColor)
+                        .clipShape(Capsule())
                 }
                 .disabled(place == places.last)
             }
-            .background(.ultraThinMaterial)
-            .padding(.horizontal, 100)
+            .padding(.horizontal, 30)
             
             Spacer()
         }
